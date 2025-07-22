@@ -16,11 +16,18 @@ const App = () => {
     }
     fetchDefaultData()
   },[])
+
+  const search = (searchInput)=>{
+    const filteredData = starshipsData.filter(starship =>
+       starship.name.toLowerCase().includes(searchInput.toLowerCase())
+    )
+    setDeisplayedStarships(filteredData)
+  }
   return (
     <>
     <h1>Star Wars API</h1>
-    <StarshipSearch />
-    <StarshipList starshipsData={starshipsData}/>
+    <StarshipSearch search={search}/>
+    <StarshipList starshipsData={displayedStarships}/>
     </>
   );
 }
