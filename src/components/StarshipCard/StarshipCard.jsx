@@ -1,4 +1,4 @@
-export default function StarshipCard({ starship }) {
+ const StarshipCard=({ starship })=> {
   return (
     <li>
       <h2>{starship.name}</h2>
@@ -8,3 +8,5 @@ export default function StarshipCard({ starship }) {
     </li>
   );
 }
+
+export default StarshipCard
